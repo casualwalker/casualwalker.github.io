@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="结构知识点, yk&#39;s Blog">
+    <meta name="keywords" content="位运算, yk&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>结构知识点 | yk&#39;s Blog</title>
+    <title>位运算 | yk&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">结构知识点</h1>
+                    <h1 class="description center-align post-title">位运算</h1>
                 </div>
             </div>
         </div>
@@ -383,7 +383,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-05
+                    2020-09-06
                 </div>
                 
 
@@ -399,35 +399,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="结构类型："><a href="#结构类型：" class="headerlink" title="结构类型："></a>结构类型：</h1><h4 id="数组和结构："><a href="#数组和结构：" class="headerlink" title="数组和结构："></a>数组和结构：</h4><p>众所周知，数组只能在初始化的时候一次性赋值<br>然而之后只能通过循环来一个个赋值</p>
-<p>结构呢？可以做到数组做不到的，它可以强转+赋值<br>也可以   “结构体1=结构体2”这样来赋值</p>
-<p>那么怎么输入结构呢？（初始化结构，给结构动态赋值）</p>
-<p>&lt;img src “结构的输入.png” width=”80%” height=”80%”&gt;</p>
-<p>既然用到函数<br>老样子，函数里面的东西是复制品<br>如果不传出来，函数结束的时候都会消失<br>啊可恶那该怎么办呢？</p>
-<ul>
-<li>1.当然是返回结构，然后在外面定义一个一样的结构来接应它啊</li>
-<li>※2.最好的方法还是传入结构指针&amp;！！！因为占用空间小，方便啊，而且不要返回，多舒服</li>
-</ul>
-<h4 id="结构指针："><a href="#结构指针：" class="headerlink" title="结构指针："></a>结构指针：</h4><p>数组的名字是数组的首地址<br>但是结构的名字却不是，所以他就像int<br>在使用结构指针的时候要加&amp;才能取到结构的地址</p>
-<p>&lt;img src “结构指针的访问.png” width=”80%” height=”80%”&gt;</p>
-<p>通过函数赋值的及常用套路：<br>通过向函数中传入结构指针，给结构赋值，然后传出指针<br>（？？为啥要传出指针呢？不是对指针操作吗？）<br>（啊原来是函数嵌套的时候就要传出了！！）</p>
-<p>（常用套路）<br>注意啊！！是先做-&gt;的，然后再取&amp;，因为前者优先级高，而且p就是指针呀</p>
-<p>&lt;img src “常用套路.png” width=”80%” height=”80%”&gt;</p>
-<p>（为什么要传出的解释）</p>
-<img src="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/传出.png" width="80%" height="80%">
+                <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/位运算.png" width="80%" height="80%">
 
-<p>结构数组：<br>就是填了好几张明信片啊（具体见C语言思维导图）</p>
-<img src="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/结构数组.png" width="80%" height="80%">
+<h3 id="逻辑运算与位运算的区别"><a href="#逻辑运算与位运算的区别" class="headerlink" title="逻辑运算与位运算的区别"></a>逻辑运算与位运算的区别</h3><img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/逻辑运算与位运算.png" width="80%" height="80%">
 
-<h4 id="结构中的结构-套娃-："><a href="#结构中的结构-套娃-：" class="headerlink" title="结构中的结构(套娃)："></a>结构中的结构(套娃)：</h4><img src="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/结构中的结构.png" width="80%" height="80%">
+<h3 id="左移和右移"><a href="#左移和右移" class="headerlink" title="左移和右移"></a>左移和右移</h3><img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/左移.png" width="50%" height="50%" align="left">
 
-<p>（形象理解）</p>
-<img src="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/形象理解套娃.png" width="80%" height="80%">
+
+<img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/左移.png" width="50%" height="50%" align="right">
 
 
 
 
-<h4 id="偷偷告诉你：typedef是结构的爸爸！"><a href="#偷偷告诉你：typedef是结构的爸爸！" class="headerlink" title="偷偷告诉你：typedef是结构的爸爸！"></a>偷偷告诉你：typedef是结构的爸爸！</h4><img src="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/typedef定义结构" width="80%" hight="80%">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -460,7 +460,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/">http://yoursite.com/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/</a>
+                    <a href="http://yoursite.com/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/">http://yoursite.com/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -667,9 +667,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/">
                     <div class="card-image">
@@ -723,9 +724,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -734,6 +735,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -752,23 +754,21 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/05/%E5%85%B3%E4%BA%8E%E6%9E%9A%E4%B8%BE/">
+                <a href="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="关于枚举">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="结构知识点">
                         
-                        <span class="card-title">关于枚举</span>
+                        <span class="card-title">结构知识点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            枚举：为了增加程序的可读性，往往用字符来表示数字其中枚举的定义就相当于一次性写下例如要定义从一月到十二月，就用枚举方便多了
-
-int RED=0;int YELLO=0;int GREEN=0;
-
-注意，它可能常常伴随这switch/cas
+                            结构类型：数组和结构：众所周知，数组只能在初始化的时候一次性赋值然而之后只能通过循环来一个个赋值
+结构呢？可以做到数组做不到的，它可以强转+赋值也可以   “结构体1=结构体2”这样来赋值
+那么怎么输入结构呢？（初始化结构，给结构动态赋值）
                         
                     </div>
                     <div class="publish-info">
