@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="位运算, yk&#39;s Blog">
+    <meta name="keywords" content="数据类型小细节, yk&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>位运算 | yk&#39;s Blog</title>
+    <title>数据类型小细节 | yk&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">位运算</h1>
+                    <h1 class="description center-align post-title">数据类型小细节</h1>
                 </div>
             </div>
         </div>
@@ -383,7 +383,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-06
+                    2020-09-16
                 </div>
                 
 
@@ -399,42 +399,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h1><img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/位运算.png" width="80%" height="80%">
-
-<h3 id="逻辑运算与位运算的区别"><a href="#逻辑运算与位运算的区别" class="headerlink" title="逻辑运算与位运算的区别"></a>逻辑运算与位运算的区别</h3><img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/逻辑运算与位运算.png" width="80%" height="80%">
-
-<h3 id="左移和右移"><a href="#左移和右移" class="headerlink" title="左移和右移"></a>左移和右移</h3><img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/左移.png" width="50%" height="50%" align="left">
-
-
-<img src="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/左移.png" width="50%" height="50%" align="right">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <h2 id="比较基础的关于数据类型的小细节："><a href="#比较基础的关于数据类型的小细节：" class="headerlink" title="比较基础的关于数据类型的小细节："></a>比较基础的关于数据类型的小细节：</h2><p>如何求两个整型数的平均值？(保留三位小数)<br>方法：<br>Case 1:如果是【确切的数字】，肯定要示意将<code>int</code>转化成<code>double</code><br><strong>※本质！！！！虽然原来是int和double的运算</strong><br><strong>但是还是要转化成double和double的运算</strong></p>
+<p>例如1/3,若要求他确切的数值，那就要用1.0/3.0或者某一个参数是有.0的<br>这个过程就是编译器【自动】将int转成double</p>
+<hr>
+<p>Case 2:但是，如果不是确切的数字呢？<br>例如<code>int a=1;</code>总不能<code>a.0</code>吧？<br>那既然不能自动，那就<strong>【手动】强转</strong><br><code>double b=(double)a;</code>就把双浮点数的a赋值给了b</p>
+<hr>
+<h3 id="总结是有两种方式"><a href="#总结是有两种方式" class="headerlink" title="总结是有两种方式:"></a>总结是有两种方式:</h3><ul>
+<li>1.确切数时用”.0”的方式【自动暗示】编译器；</li>
+<li>2.整型变量时用(double)a【手动强转】；</li>
+</ul>
 
             </div>
             <hr/>
@@ -460,7 +433,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/">http://yoursite.com/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/</a>
+                    <a href="http://yoursite.com/2020/09/16/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%B0%8F%E7%BB%86%E8%8A%82/">http://yoursite.com/2020/09/16/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%B0%8F%E7%BB%86%E8%8A%82/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -667,9 +640,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/09/16/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%B0%8F%E7%BB%86%E8%8A%82/">
                     <div class="card-image">
@@ -687,9 +661,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -698,6 +672,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -716,26 +691,60 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/05/%E7%BB%93%E6%9E%84%E7%9F%A5%E8%AF%86%E7%82%B9/">
+                <a href="/2020/09/06/%E4%BD%8D%E8%BF%90%E7%AE%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="结构知识点">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="位运算">
                         
-                        <span class="card-title">结构知识点</span>
+                        <span class="card-title">位运算</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            结构类型：数组和结构：众所周知，数组只能在初始化的时候一次性赋值然而之后只能通过循环来一个个赋值
-结构呢？可以做到数组做不到的，它可以强转+赋值也可以   “结构体1=结构体2”这样来赋值
-那么怎么输入结构呢？（初始化结构，给结构动态赋值）
+                            位运算
+
+逻辑运算与位运算的区别
+
+左移和右移
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-06
                             </span>
                         <span class="publish-author">
                             
