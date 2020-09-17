@@ -408,10 +408,24 @@
 <li>4.scanf字符串的时候，直接scanf(“%s”,a);   而不是scanf(“%s”,&amp;a[i]);</li>
 <li>5.scanf(“%lf”);与scanf(“%.2lf”);不一样，尽量用前者<br>Q：指针为什么要动态空间？（是因为指针无所指！！）<br>因为它所指的地址不知道，不能解引用拿来运算，当然也不能拿来scanf，因为根本不知道解什么地址/或者是把输入的值放到哪个地址里面。。。。。<br>（补充字符串指针：在scanf赋值的时候，要先让指针有所指，或者是malloc（）给他开辟一片空间//注意要手动free！！！//）</li>
 </ul>
-<p>9.16</p>
-<ul>
+<h3 id="9-16"><a href="#9-16" class="headerlink" title="9.16"></a>9.16</h3><ul>
 <li>显示Runtime Error (ACCESS_VIOLATION)错误？原因可能是数组下标越界了，a[n]的n太大而没有定义</li>
 </ul>
+<h3 id="9-17"><a href="#9-17" class="headerlink" title="9.17"></a>9.17</h3><ul>
+<li>冒泡排序模板</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int j;int i</span><br><span class="line">for(i&#x3D;0;i&lt;n-1;i++)</span><br><span class="line">&#123;</span><br><span class="line">    for(j&#x3D;0;j&lt;n-1-i;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(a[j]&lt;a[j+1])</span><br><span class="line">        &#123;</span><br><span class="line">            int t;</span><br><span class="line">            t&#x3D;a[j];a[j]&#x3D;a[j+1];a[j+1]&#x3D;t;</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>冒泡排序三个关键点：<br><strong>1.轮次为元素数-1；（轮次）</strong><br><strong>2.第一轮和第二轮冒泡有何差别？；（模拟、差异）</strong><br><strong>※3.冒泡方向（是向着每一轮元素减少的那个方向冒泡的），这关乎是 j++ or j- -（方向）</strong></p>
+<ul>
+<li><p>关于数组要不要全部初始化为0？<br>答：目前看来不需要</p>
+</li>
+<li><p><code>while(scanf(&quot;%d&quot;,&amp;n)!=EOF &amp;&amp;n!=0)</code>和<code>while(scanf(&quot;%d&quot;,&amp;n)!=EOF &amp;&amp;scanf(&quot;%d&quot;,&amp;n)!=0)</code>两者辨识<br>要树立一个观念：碰到<code>scanf()</code>其实是一个函数，只要碰到它就会要求输入<br>那么这样看来，前者只要求输入一次，并且直接赋值给n；而后者输入了两次</p>
+</li>
+<li><p>定义数组时非常重要的一点，里面只能是具体数字而不能是字母<br>例如尽管<code>n=5</code>，但是不能<code>int a[n];</code>，只能<code>int a[5];</code></p>
+</li>
+</ul>
+<p><strong>遇到具体题目的时候怎么办？</strong><br><strong>题目应该会提供某个变量的范围，够用就行了！</strong></p>
 
             </div>
             <hr/>
@@ -876,12 +890,16 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <style>
     .aplayer .aplayer-lrc p {
         
+        display: none;
+        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
         
         font-size: 15px;
         color: #42b983;
