@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="中断的优先级, yk&#39;s Blog">
+    <meta name="keywords" content="写流水灯的时候踩的坑, yk&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>中断的优先级 | yk&#39;s Blog</title>
+    <title>写流水灯的时候踩的坑 | yk&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">中断的优先级</h1>
+                    <h1 class="description center-align post-title">写流水灯的时候踩的坑</h1>
                 </div>
             </div>
         </div>
@@ -399,10 +399,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/0.png"></p>
-<p>不多BB，感觉和配置GPIO一样<br>1.选哪个中断<br>2.设定中断抢占优先级<br>3.设定中断响应优先级<br>4.使能ENABLE</p>
-<p><img src="/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/1.png"></p>
-<p>中断优先级分组没看懂(2020.10.11)(小声BB)</p>
+                <p>这里是写流水灯的时候踩的坑(擦眼泪)：<br>类似于<br>GPIO_InitTypeDef GPIO_InitStructure;<br>这样定义语句一定要写在前面啊啊啊啊啊啊！！！！<br>比如流水灯中，不能先开时钟，要先定义结构变量！！！</p>
 
             </div>
             <hr/>
@@ -428,7 +425,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">http://yoursite.com/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/</a>
+                    <a href="http://yoursite.com/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/">http://yoursite.com/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -635,9 +632,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/">
                     <div class="card-image">
@@ -656,9 +654,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -667,6 +665,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -685,22 +684,23 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/11/%E7%AB%AF%E5%8F%A3%E7%9A%84%E5%A4%8D%E7%94%A8%E5%92%8C%E9%87%8D%E6%98%A0%E5%B0%84/">
+                <a href="/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="端口的复用和重映射">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="中断的优先级">
                         
-                        <span class="card-title">端口的复用和重映射</span>
+                        <span class="card-title">中断的优先级</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么叫端口的复用？一个引脚既能当IO用又有其他的第二功能
-那么如何配置端口呢？1.IO口使能2.复用端口使能两个时钟都要打开，缺一不可！！(ps：只要用到IO口就要打开IO口的时钟，只要用到【外设】(复用端口)就要打开外设时钟)
+                            
+不多BB，感觉和配置GPIO一样1.选哪个中断2.设定中断抢占优先级3.设定中断响应优先级4.使能ENABLE
 
-什么是端
+中断优先级分组没看懂(2020.10.11)(小声BB)
+
                         
                     </div>
                     <div class="publish-info">
