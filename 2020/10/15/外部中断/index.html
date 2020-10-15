@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="写流水灯的时候踩的坑, yk&#39;s Blog">
+    <meta name="keywords" content="外部中断, yk&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>写流水灯的时候踩的坑 | yk&#39;s Blog</title>
+    <title>外部中断 | yk&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">写流水灯的时候踩的坑</h1>
+                    <h1 class="description center-align post-title">外部中断</h1>
                 </div>
             </div>
         </div>
@@ -383,7 +383,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-10-11
+                    2020-10-15
                 </div>
                 
 
@@ -399,7 +399,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这里是写流水灯的时候踩的坑(擦眼泪)：<br>类似于<br>GPIO_InitTypeDef GPIO_InitStructure;<br>这样定义语句一定要写在前面啊啊啊啊啊啊！！！！<br>比如流水灯中，不能先开时钟，要先定义结构变量！！！</p>
+                <p>外部中断概述</p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/0.png"></p>
+<p>主要是搞明白<br>线0~15<br>是什么意思</p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/1.png"></p>
+<p>GPIOA.0~GPIOG.0归为一类//相隔比较远的那种<br>可以将GPIOx.0映射到EXTI0<br>可以将GPIOx.1映射到EXTI1<br>……<br>……</p>
+<p>Attention:<br>当PA0映射到XT0的时候<br>就不能再用PB0映射了</p>
+<p>中断线可以设置【上沿中断】【下沿中断】【边沿中断】</p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/2.png"></p>
+<p>设置完中断线之后，就要写中断函数</p>
+<p>外部中断配置的常用库函数:</p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/4.png"></p>
+<p><strong>！！！注意第四步，一定要【手动】清除标志位！！！</strong></p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/3.png"></p>
+<p>但是有几个中断线共用一个中断函数。。。<br>(是偷工减料吗？？？)</p>
+<p>初始化中断线:</p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/5.png"></p>
+<p>外部中断的一般配置步骤:</p>
+<p><img src="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/6.png"></p>
+<p>一定要注意：<br>在终端服务函数最后面要清除标志位！！<br><strong>否则中断只能发生一次！！</strong></p>
 
             </div>
             <hr/>
@@ -425,7 +443,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/">http://yoursite.com/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/</a>
+                    <a href="http://yoursite.com/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/">http://yoursite.com/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -636,34 +654,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/10/11/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/">
+                <a href="/2020/10/15/%E7%9C%8B%E9%97%A8%E7%8B%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="串口通信背景知识">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="看门狗">
                         
-                        <span class="card-title">串口通信背景知识</span>
+                        <span class="card-title">看门狗</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            什么是看门狗？由于外部电磁等干扰，程序可能跑飞进入死循环这时候就要看门狗来解决这个问题
 
+STM32中的看门狗：
 
+看门狗的工作原理：
 
-
-
-
-
-记住，这里奇偶校验位是用来控制1的个数为偶数如果最终发现1的个数为奇数的话就是错误数据
-波特率非常重要，异步通信要约定好波特率才可以成功！！
-
+通俗的来说就是在狗饿死前喂它防止它饿死的时候复位
+如果程序跑飞，就没有及时喂狗狗狗饿死了程序就复位了(
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
                         </span>
                         <span class="publish-author">
                             
@@ -691,30 +706,39 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
+                <a href="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="中断的优先级">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="串口通信库函数的配置">
                         
-                        <span class="card-title">中断的优先级</span>
+                        <span class="card-title">串口通信库函数的配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-不多BB，感觉和配置GPIO一样1.选哪个中断2.设定中断抢占优先级3.设定中断响应优先级4.使能ENABLE
+                            1.常用的串口相关寄存器：
+状态寄存器常用位
 
-中断优先级分组没看懂(2020.10.11)(小声BB)
-总结：
-挂起和唤醒 ：
+数据寄存器
 
+波特率寄存器：
+
+分整数和小数分别配置波特率寄存器(小数部分化为16进制是：小数*16)
+
+2.波特率的计算方法
+
+3.常用的串口相关库函数
+
+※4.串口配置的一般步骤：
+
+At
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
                             </span>
                         <span class="publish-author">
                             

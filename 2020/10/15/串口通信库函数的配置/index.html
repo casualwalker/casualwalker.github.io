@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="写流水灯的时候踩的坑, yk&#39;s Blog">
+    <meta name="keywords" content="串口通信库函数的配置, yk&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>写流水灯的时候踩的坑 | yk&#39;s Blog</title>
+    <title>串口通信库函数的配置 | yk&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">写流水灯的时候踩的坑</h1>
+                    <h1 class="description center-align post-title">串口通信库函数的配置</h1>
                 </div>
             </div>
         </div>
@@ -383,7 +383,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-10-11
+                    2020-10-15
                 </div>
                 
 
@@ -399,7 +399,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这里是写流水灯的时候踩的坑(擦眼泪)：<br>类似于<br>GPIO_InitTypeDef GPIO_InitStructure;<br>这样定义语句一定要写在前面啊啊啊啊啊啊！！！！<br>比如流水灯中，不能先开时钟，要先定义结构变量！！！</p>
+                <p>1.常用的串口相关寄存器：<br><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/0.png"></p>
+<p>状态寄存器常用位</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/1.png"></p>
+<p>数据寄存器</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/4.png"></p>
+<p>波特率寄存器：</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/2.png"></p>
+<p>分整数和小数分别配置波特率寄存器<br>(小数部分化为16进制是：小数*16)</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/5.png"></p>
+<p>2.波特率的计算方法</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/3.png"></p>
+<p>3.常用的串口相关库函数</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/6.png"></p>
+<p>※4.串口配置的一般步骤：</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/7.png"></p>
+<p>Attention:<br>关于有GPIO的配置<br>具体要看表格配置串口发送和接受时候的Mode</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/8.png"></p>
+<p>5.串口通信协议规定代码</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/9.png"></p>
+<p>最上面define的是最大接收字节数<br>例如电脑传给单片机<br>单片机最多只能接收200个字节</p>
+<p>下面的<code>USART_RX_STA</code>变量<br>是接收状态标记<br>如图中所示<br>必须要以<br><code>(0x0D,0x0A)//即回车和换行</code><br>作为结尾，否则它就不认这一串东西</p>
+<p>例如：</p>
+<p><img src="/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/10.png"></p>
+<p><code>(0x0D),(0x0A)</code>这俩东西不是有效字符，不会占用数据空间</p>
+<p>其实它一直在判断有没有接收到<code>(0x0D)</code><br>如果检测到了，就把<code>USART_RX_STA</code>的bit14置一<br>然后检测下一个数据，如果是<code>(0x0A)</code>，那就接收完成<br>此时把<code>USART_RX_STA</code>的bit15置一</p>
+<p>实验代码具体的进行：<br>如何实现电脑发给单片机数据，单片机返回给电脑呢？<br>【在协议的角度】：<br>在外部的主函数里面，不停分析<br><code>USART_RX_STA</code>的bit15<br>如果是1(标志接收完成)<br>就根据bit13~0(接收到的有效数据个数)<br>来提取<code>USART_RX_BUF</code>中的数据<br>然后拿出来发送给电脑<br>最后的最后，将<code>USART_RX_STA</code>变量清零！！</p>
 
             </div>
             <hr/>
@@ -425,7 +450,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/">http://yoursite.com/2020/10/11/%E5%86%99%E6%B5%81%E6%B0%B4%E7%81%AF%E7%9A%84%E6%97%B6%E5%80%99%E8%B8%A9%E7%9A%84%E5%9D%91/</a>
+                    <a href="http://yoursite.com/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/">http://yoursite.com/2020/10/15/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%BA%93%E5%87%BD%E6%95%B0%E7%9A%84%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -636,34 +661,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/10/11/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/">
+                <a href="/2020/10/15/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="串口通信背景知识">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="外部中断">
                         
-                        <span class="card-title">串口通信背景知识</span>
+                        <span class="card-title">外部中断</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            外部中断概述
 
+主要是搞明白线0~15是什么意思
 
-
-
-
-
-
-记住，这里奇偶校验位是用来控制1的个数为偶数如果最终发现1的个数为奇数的话就是错误数据
-波特率非常重要，异步通信要约定好波特率才可以成功！！
-
+GPIOA.0~GPIOG.0归为一类//相隔比较远的那种可以将GPIOx.0映射到EXTI0可以将GPIOx.1映射到EXTI1…………
+Attention:当PA0映射到XT0的时候就
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
                         </span>
                         <span class="publish-author">
                             
@@ -691,24 +711,28 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/11/%E4%B8%AD%E6%96%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
+                <a href="/2020/10/11/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="中断的优先级">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="串口通信背景知识">
                         
-                        <span class="card-title">中断的优先级</span>
+                        <span class="card-title">串口通信背景知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-不多BB，感觉和配置GPIO一样1.选哪个中断2.设定中断抢占优先级3.设定中断响应优先级4.使能ENABLE
 
-中断优先级分组没看懂(2020.10.11)(小声BB)
-总结：
-挂起和唤醒 ：
+
+
+
+
+
+
+记住，这里奇偶校验位是用来控制1的个数为偶数如果最终发现1的个数为奇数的话就是错误数据
+波特率非常重要，异步通信要约定好波特率才可以成功！！
 
                         
                     </div>
